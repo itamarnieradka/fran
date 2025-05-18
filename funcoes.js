@@ -37,42 +37,34 @@ function somaIndividual(e){
     sTotal1[i] = novo;
     localStorage.setItem('sTotal1', JSON.stringify(sTotal1));
 }
-function modeloCalculo(e){
-        const nomeGrupo = e.name;
-        const valorAtual = e.value;
+function modeloCalculo(){
+    let vet = document.querySelectorAll('input[type="radio"]');
+    vet.forEach(function(radio) {
+        if (radio.checked) {
 
-        if (ultimoValorSelecionado[nomeGrupo] === valorAtual) {
-            return; // já estava marcado, não faz nada
-        }
-
-
-else
-    {
-
-        let q = parseInt(e.value);
+            let q = parseInt(radio.value);
         switch (q) {
             case 1:
-                soma1 += parseInt(e.value);
+                soma1 += parseInt(radio.value);
                 break;
             case 2:
-                soma2 += parseInt(e.value);
+                soma2 += parseInt(radio.value);
 
                 break;
             case 3:
-                soma3 += parseInt(e.value);;
+                soma3 += parseInt(radio.value);;
 
                 break;
             case 4:
-                soma4 += parseInt(e.value);
+                soma4 += parseInt(radio.value);
 
                 break;
             case 5:
-                soma5 += parseInt(e.value);
+                soma5 += parseInt(radio.value);
 
                 break;
         }
+        }
+    });
 
-
-    }
-    ultimoValorSelecionado[nomeGrupo] = valorAtual;
 }
